@@ -14,5 +14,10 @@ if (!success || number < 1 || number > 100)
 
 var output = new List<string>();
 Enumerable.Range(1, number).ToList()
-    .ForEach(n => output.Add(FizzBuzzService.Generate(n)));
+    .ForEach(n =>
+    {
+        var result = FizzBuzzService.Generate(n);
+        output.Add(result != string.Empty ? result : "error");
+    });
+    
 Console.WriteLine(string.Join(", ", output));
