@@ -1,10 +1,10 @@
 ﻿using FizzBuzz;
 
-Console.Write("Enter a number: ");
+Console.Write("input: ");
 var input = Console.ReadLine();
 
 int number;
-bool success = int.TryParse(input, out number);
+var success = int.TryParse(input, out number);
 
 if (!success || number < 1 || number > 100)
 {
@@ -19,5 +19,5 @@ Enumerable.Range(1, number).ToList()
         var result = FizzBuzzService.Generate(n);
         output.Add(result != string.Empty ? result : "error");
     });
-    
-Console.WriteLine(string.Join(", ", output));
+
+Console.WriteLine($"output: {string.Join(", ", output)}");
